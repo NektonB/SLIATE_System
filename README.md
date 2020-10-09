@@ -1,2 +1,1 @@
-# SLIATE_System_Demo
- 
+# SLIATE_System
