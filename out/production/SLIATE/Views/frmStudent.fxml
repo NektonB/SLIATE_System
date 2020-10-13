@@ -234,7 +234,7 @@
                         </AnchorPane>
                         <HBox alignment="CENTER" prefHeight="120.0" prefWidth="323.0">
                            <children>
-                              <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="106.0" style="-fx-background-color: #FF8800;" text="Clear" textFill="WHITE">
+                              <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="106.0" style="-fx-background-color: #1b88bf;" text="Clear" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -242,7 +242,7 @@
                                     <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="13" />
                                  </graphic>
                               </JFXButton>
-                              <JFXButton layoutX="132.0" layoutY="42.0" prefHeight="40.0" prefWidth="106.0" style="-fx-background-color: #1b88bf;" text="Save" textFill="WHITE">
+                              <JFXButton layoutX="132.0" layoutY="42.0" prefHeight="40.0" prefWidth="106.0" styleClass="saveButton" text="Save" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>

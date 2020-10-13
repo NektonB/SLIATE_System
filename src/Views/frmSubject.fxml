@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="348.0" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DepartmentController">
+   <children>
+      <Label layoutX="32.0" layoutY="21.0" text="Add  New Subject">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField focusColor="#c93e61" layoutX="49.0" layoutY="65.0" prefHeight="29.0" prefWidth="261.0" promptText="Subject number" unFocusColor="#656565">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton layoutX="128.0" layoutY="162.0" prefHeight="37.0" prefWidth="77.0" styleClass="saveButton" text="Add" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnCloss" layoutX="216.0" layoutY="162.0" onAction="#clossScene" prefHeight="37.0" prefWidth="95.0" styleClass="saveButton" text="Dismiss" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField focusColor="#c93e61" layoutX="49.0" layoutY="113.0" prefHeight="29.0" prefWidth="261.0" promptText="Subject name" unFocusColor="#656565">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</AnchorPane>

@@ -133,9 +133,9 @@
                   <Insets bottom="10.0" left="10.0" top="10.0" />
                </BorderPane.margin>
                <left>
-                  <AnchorPane prefHeight="383.0" prefWidth="296.0" styleClass="list-card-unpadded" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="372.0" prefWidth="233.0" styleClass="list-card-unpadded" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane prefHeight="65.0" prefWidth="296.0" style="-fx-background-color: #178d7c;" styleClass="card-title" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <AnchorPane prefHeight="65.0" prefWidth="246.0" style="-fx-background-color: #178d7c;" styleClass="card-title" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
                               <Label layoutX="24.0" layoutY="21.0" text="SLIATE Departments" textFill="WHITE">
                                  <font>
@@ -145,7 +145,7 @@
                            </children>
                         </AnchorPane>
                         <JFXListView layoutX="11.0" layoutY="71.0" prefHeight="229.0" prefWidth="300.0" showTooltip="true" verticalGap="5.0" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="72.0" />
-                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="235.0" layoutY="323.0" prefHeight="50.0" prefWidth="50.0" ripplerFill="#f2dbd6" styleClass="roundButton" AnchorPane.bottomAnchor="10.0">
+                        <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="176.0" layoutY="315.0" onAction="#loadDepartment" prefHeight="50.0" prefWidth="50.0" ripplerFill="#f2dbd6" styleClass="roundButton" AnchorPane.bottomAnchor="7.0">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -159,24 +159,6 @@
                      </children>
                   </AnchorPane>
                </left>
-               <center>
-                  <AnchorPane prefHeight="388.0" prefWidth="398.0" styleClass="list-card-unpadded" BorderPane.alignment="CENTER">
-                     <children>
-                        <AnchorPane prefHeight="65.0" prefWidth="296.0" style="-fx-background-color: coral;" styleClass="card-title" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                           <children>
-                              <Label layoutX="24.0" layoutY="21.0" text="SLIATE Departments" textFill="WHITE">
-                                 <font>
-                                    <Font name="Calibri Bold" size="20.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                     </children>
-                     <BorderPane.margin>
-                        <Insets left="10.0" />
-                     </BorderPane.margin>
-                  </AnchorPane>
-               </center>
                <right>
                   <AnchorPane prefHeight="388.0" prefWidth="315.0" styleClass="list-card-unpadded" BorderPane.alignment="CENTER">
                      <children>
@@ -268,6 +250,63 @@
                      </BorderPane.margin>
                   </AnchorPane>
                </right>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <opaqueInsets>
+                        <Insets left="10.0" right="10.0" />
+                     </opaqueInsets>
+                     <children>
+                        <AnchorPane layoutX="12.0" prefHeight="372.0" prefWidth="224.0" styleClass="list-card-unpadded" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane prefHeight="65.0" prefWidth="223.0" style="-fx-background-color: coral;" styleClass="card-title" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <children>
+                                    <Label layoutX="24.0" layoutY="21.0" text="Subjects" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="165.0" layoutY="315.0" onAction="#loadSubject" prefHeight="50.0" prefWidth="50.0" ripplerFill="#f2dbd6" styleClass="roundButton" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="7.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="25" text="" />
+                                 </graphic>
+                                 <padding>
+                                    <Insets left="1.0" top="2.0" />
+                                 </padding>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="248.0" prefHeight="372.0" prefWidth="224.0" styleClass="list-card-unpadded" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="248.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane prefHeight="65.0" prefWidth="223.0" style="-fx-background-color: #1974bb;" styleClass="card-title" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <children>
+                                    <Label layoutX="24.0" layoutY="21.0" text="Semesters" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="165.0" layoutY="315.0" onAction="#loadSemester" prefHeight="50.0" prefWidth="50.0" ripplerFill="#f2dbd6" styleClass="roundButton" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="7.0">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="25" text="" />
+                                 </graphic>
+                                 <padding>
+                                    <Insets left="1.0" top="2.0" />
+                                 </padding>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
             </BorderPane>
          </center>
       </BorderPane>
