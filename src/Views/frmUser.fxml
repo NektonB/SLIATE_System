@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="800.0" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="800.0" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserController">
    <children>
-      <Pane layoutX="400.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="400.0">
+      <Pane layoutX="400.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="400.0">
          <children>
             <Label layoutX="33.0" layoutY="21.0" text="User Registration" textFill="#545454">
                <font>
@@ -28,34 +28,34 @@
                   <Font name="Ebrima Bold" size="14.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="txt_nic" focusColor="#9e5662" labelFloat="true" layoutX="57.0" layoutY="157.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="300.0" promptText="Contact number" unFocusColor="#a3a3a3">
+            <JFXTextField fx:id="txt_nic" focusColor="#9e5662" labelFloat="true" layoutX="57.0" layoutY="212.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="300.0" promptText="Contact number" unFocusColor="#a3a3a3">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXTextField>
-            <JFXPasswordField fx:id="txt_password" focusColor="#9e5662" labelFloat="true" layoutX="55.0" layoutY="383.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="300.0" promptText="Password" unFocusColor="#a3a3a3">
+            <JFXPasswordField fx:id="txt_password" focusColor="#9e5662" labelFloat="true" layoutX="55.0" layoutY="437.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="300.0" promptText="Password" unFocusColor="#a3a3a3">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXPasswordField>
-            <JFXButton fx:id="btn_login" buttonType="RAISED" layoutX="58.0" layoutY="498.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" ripplerFill="#0777ff" style="-fx-background-color: #9e5662;" styleClass="loginBtn" text="Register" textFill="WHITE">
+            <JFXButton fx:id="btn_login" buttonType="RAISED" layoutX="58.0" layoutY="551.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="300.0" ripplerFill="#0777ff" style="-fx-background-color: #9e5662;" styleClass="loginBtn" text="Register" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </JFXButton>
-            <JFXTextField fx:id="txt_userName" focusColor="#9e5662" labelFloat="true" layoutX="58.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="300.0" promptText="User Name" unFocusColor="#a3a3a3">
+            <JFXTextField fx:id="txt_userName" focusColor="#9e5662" labelFloat="true" layoutX="58.0" layoutY="325.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="300.0" promptText="User Name" unFocusColor="#a3a3a3">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXTextField>
-            <JFXComboBox fx:id="cmb_status" focusColor="#9e5662" labelFloat="true" layoutX="58.0" layoutY="441.0" prefHeight="35.0" prefWidth="300.0" promptText="Status" unFocusColor="#a3a3a3" />
-            <JFXComboBox fx:id="cmb_userType" focusColor="#9e5662" labelFloat="true" layoutX="57.0" layoutY="333.0" prefHeight="25.0" prefWidth="300.0" promptText="User Type" unFocusColor="#a3a3a3" />
+            <JFXComboBox fx:id="cmb_status" focusColor="#9e5662" labelFloat="true" layoutX="58.0" layoutY="495.0" prefHeight="35.0" prefWidth="300.0" promptText="Status" unFocusColor="#a3a3a3" />
+            <JFXComboBox fx:id="cmb_userType" focusColor="#9e5662" labelFloat="true" layoutX="57.0" layoutY="387.0" prefHeight="25.0" prefWidth="300.0" promptText="User Type" unFocusColor="#a3a3a3" />
             <JFXTextField fx:id="txt_nic1" focusColor="#9e5662" labelFloat="true" layoutX="56.0" layoutY="98.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="300.0" promptText="Full Name" unFocusColor="#a3a3a3">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txt_nic2" focusColor="#9e5662" labelFloat="true" layoutX="58.0" layoutY="219.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="300.0" promptText="Email" unFocusColor="#a3a3a3">
+            <JFXTextField fx:id="txt_nic2" focusColor="#9e5662" labelFloat="true" layoutX="58.0" layoutY="269.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="300.0" promptText="Email" unFocusColor="#a3a3a3">
                <font>
                   <Font size="13.0" />
                </font>
@@ -65,9 +65,14 @@
                   <FontAwesomeIconView fill="WHITE" glyphName="EYE" size="20" />
                </graphic>
             </JFXButton>
+            <JFXTextField fx:id="txt_nic11" focusColor="#9e5662" labelFloat="true" layoutX="56.0" layoutY="155.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="300.0" promptText="NIC Number" unFocusColor="#a3a3a3">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
          </children>
       </Pane>
-      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="409.0" style="-fx-background-color: #6f3942;">
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="409.0" style="-fx-background-color: #6f3942;">
          <children>
             <AnchorPane prefHeight="188.0" prefWidth="174.0" style="-fx-background-color: white;">
                <children>
