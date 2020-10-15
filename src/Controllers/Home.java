@@ -28,6 +28,9 @@ public class Home implements Initializable {
     @FXML
     private JFXButton btnStudent;
 
+    @FXML
+    private JFXButton btnCourse;
+
     private JFXButton temp = null;
     private JFXButton recover = null;
 
@@ -63,6 +66,16 @@ public class Home implements Initializable {
         btnStudent.setStyle("-fx-background-color: #a34758; -fx-font-weight: bold;");
 
         btnHome.setStyle("-fx-background-color: transparent");
+    }
+
+    public void loadCourse(ActionEvent event) throws IOException {
+        StackPane pane = FXMLLoader.load(getClass().getClassLoader().getResource("Views/pnlCourse.fxml"));
+        rootPane.getChildren().setAll(pane);
+
+        btnCourse.setStyle("-fx-background-color: #a34758; -fx-font-weight: bold;");
+
+        btnHome.setStyle("-fx-background-color: transparent");
+        btnStudent.setStyle("-fx-background-color: transparent");
     }
 
     public void loadUser() {

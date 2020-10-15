@@ -10,6 +10,14 @@
     -fx-padding: 0;
 }
 
+.card-unpadded2 {
+   -fx-background-color: #f3f3f3;
+    -fx-background-radius: 4.0;
+    -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,
+    1.5);
+    -fx-padding: 0;
+}
+
 .side-menu-unpadded {
     -fx-background-color: #6f3942;
     -fx-background-radius: 0 60 4 0;
@@ -22,6 +30,7 @@
 .card-title {
     -fx-background-radius: 5 5 0 0;
 }
+
 
 .list-view {
 
