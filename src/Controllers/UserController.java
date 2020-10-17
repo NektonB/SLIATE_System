@@ -25,9 +25,6 @@ public class UserController implements Initializable {
     @FXML
     private FontAwesomeIconView btnExit;
 
-    private double x = 0;
-    private double y = 0;
-
     private Stage stage;
 
     @Override
@@ -35,7 +32,7 @@ public class UserController implements Initializable {
 
     }
 
-    public void clossScene() {
+    public void closeScene() {
         Stage stage = (Stage) btnExit.getScene().getWindow();
         stage.close();
     }

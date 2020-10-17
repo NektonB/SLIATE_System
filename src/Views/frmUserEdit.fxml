@@ -68,7 +68,7 @@
                     </children>
                 </Pane>
                 <JFXButton alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="840.0"
-                           layoutY="3.0" onAction="#clossScene" prefHeight="36.0" prefWidth="40.0" ripplerFill="#e10700"
+                           layoutY="3.0" onAction="#closeScene" prefHeight="36.0" prefWidth="40.0" ripplerFill="#e10700"
                            styleClass="closeButton" text="Button" AnchorPane.rightAnchor="5.0">
                     <graphic>
                         <FontAwesomeIconView fx:id="btnExit" fill="#515050" glyphName="CLOSE" size="22" text=""
