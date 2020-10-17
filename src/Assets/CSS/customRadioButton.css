@@ -1,5 +1,5 @@
 
-.radio-button > .radio  {
+.radio-button > .radio {
     -fx-background-color: transparent;
     -fx-background-radius: 1.0em; /* large value to make sure this remains circular */
     -fx-background-insets: 0;
@@ -23,8 +23,7 @@
 
 
 .radio-button:selected > .radio > .dot,
-.radio-button:pressed > .radio > .dot
-{
+.radio-button:pressed > .radio > .dot {
     -fx-padding: 2px;
 }
 

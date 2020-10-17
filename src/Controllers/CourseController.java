@@ -17,6 +17,7 @@ public class CourseController implements Initializable {
 
     @FXML
     private JFXButton btnClose;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -39,7 +40,7 @@ public class CourseController implements Initializable {
         }
     }
 
-    public void clossScene(){
+    public void clossScene() {
         Stage stage = (Stage) btnClose.getScene().getWindow();
         stage.close();
     }

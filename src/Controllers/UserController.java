@@ -1,11 +1,9 @@
 package Controllers;
 
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -13,7 +11,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,20 +25,20 @@ public class UserController implements Initializable {
     @FXML
     private FontAwesomeIconView btnExit;
 
-    private double x=0;
-    private double y=0;
+    private double x = 0;
+    private double y = 0;
 
     private Stage stage;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
-    public void clossScene(){
+    public void clossScene() {
         Stage stage = (Stage) btnExit.getScene().getWindow();
         stage.close();
     }
-
 
 
     public void loadUser() {

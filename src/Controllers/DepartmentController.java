@@ -18,7 +18,7 @@ public class DepartmentController implements Initializable {
 
     }
 
-    public void clossScene(){
+    public void clossScene() {
         Stage stage = (Stage) btnCloss.getScene().getWindow();
         stage.close();
     }

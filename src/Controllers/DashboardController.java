@@ -93,7 +93,7 @@ public class DashboardController implements Initializable {
             productsStage.setX(450);
             productsStage.setY(430);
             productsStage.showAndWait();
-           // productsStage.show();
+            // productsStage.show();
 
         } catch (Exception e) {
             e.printStackTrace();

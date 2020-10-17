@@ -39,7 +39,7 @@ public class StudentController implements Initializable {
         }
     }
 
-    public void clossScene(){
+    public void clossScene() {
         Stage stage = (Stage) btnExit.getScene().getWindow();
         stage.close();
     }
