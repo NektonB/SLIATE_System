@@ -1,146 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import java.net.URL?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="1293.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Home">
-   <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0">
-         <top>
-            <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="1271.0" styleClass="header" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="87.0" fitWidth="723.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Assests/logo.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets left="20.0" />
-                     </HBox.margin>
-                  </ImageView>
-               </children></HBox>
-         </top>
-         <left>
-            <BorderPane prefHeight="610.0" prefWidth="242.0" styleClass="side-menu-unpadded" BorderPane.alignment="CENTER">
-               <bottom>
-                  <VBox prefHeight="74.0" prefWidth="211.0" BorderPane.alignment="CENTER" />
-               </bottom>
-               <BorderPane.margin>
-                  <Insets top="8.0" />
-               </BorderPane.margin>
-               <top>
-                  <VBox fx:id="paneMenu" prefHeight="462.0" prefWidth="235.0" BorderPane.alignment="CENTER">
-                     <children>
-                        <JFXButton fx:id="btnHome" alignment="BASELINE_LEFT" graphicTextGap="30.0" onAction="#loadDashboard" prefHeight="50.0" prefWidth="233.0" ripplerFill="WHITE" styleClass="menuButton" text="Home" textFill="WHITE">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="28" />
-                           </graphic>
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <padding>
-                              <Insets left="15.0" />
-                           </padding>
-                        </JFXButton>
-                        <JFXButton fx:id="btnStudent" alignment="BASELINE_LEFT" graphicTextGap="35.0" layoutX="10.0" layoutY="10.0" onAction="#loadStudent" prefHeight="50.0" prefWidth="233.0" ripplerFill="WHITE" styleClass="menuButton" text="Student" textFill="WHITE">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="CHILD" size="28" />
-                           </graphic>
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <padding>
-                              <Insets left="15.0" />
-                           </padding>
-                        </JFXButton>
-                        <JFXButton alignment="BASELINE_LEFT" graphicTextGap="30.0" layoutX="10.0" layoutY="52.0" prefHeight="50.0" prefWidth="233.0" ripplerFill="WHITE" styleClass="menuButton" text="Exam" textFill="WHITE">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="BOOK" size="28" />
-                           </graphic>
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <padding>
-                              <Insets left="15.0" />
-                           </padding>
-                        </JFXButton>
-                        <JFXButton alignment="BASELINE_LEFT" graphicTextGap="32.0" layoutX="10.0" layoutY="94.0" prefHeight="50.0" prefWidth="233.0" ripplerFill="WHITE" styleClass="menuButton" text="Result Sheet" textFill="WHITE">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="FILE" size="28" />
-                           </graphic>
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <padding>
-                              <Insets left="15.0" />
-                           </padding>
-                        </JFXButton>
-                        <JFXButton alignment="BASELINE_LEFT" graphicTextGap="32.0" layoutX="10.0" layoutY="190.0" onAction="#loadUser" prefHeight="50.0" prefWidth="233.0" ripplerFill="WHITE" styleClass="menuButton" text="User" textFill="WHITE">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="USER" size="28" />
-                           </graphic>
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <padding>
-                              <Insets left="15.0" />
-                           </padding>
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </JFXButton>
-                     </children>
-                     <BorderPane.margin>
-                        <Insets top="40.0" />
-                     </BorderPane.margin>
-                  </VBox>
-               </top>
-            </BorderPane>
-         </left>
-         <center>
-            <StackPane fx:id="rootPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER_LEFT">
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
-            </StackPane>
-         </center>
-      </BorderPane>
-   </children>
-   <stylesheets>
-      <URL value="@../CSS/Style.css" />
-      <URL value="@../CSS/Style.css" />
-   </stylesheets>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+           minWidth="-Infinity"
+           prefHeight="697.0" prefWidth="1293.0" xmlns="http://javafx.com/javafx/8.0.171"
+           fx:controller="Controllers.HomeController">
+    <children>
+        <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <top>
+                <HBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="1271.0" styleClass="header"
+                      BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="87.0" fitWidth="723.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Assets/Graphics/logo.png"/>
+                            </image>
+                            <HBox.margin>
+                                <Insets left="20.0"/>
+                            </HBox.margin>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </top>
+            <left>
+                <BorderPane prefHeight="610.0" prefWidth="242.0" styleClass="side-menu-unpadded"
+                            BorderPane.alignment="CENTER">
+                    <bottom>
+                        <VBox prefHeight="74.0" prefWidth="211.0" BorderPane.alignment="CENTER"/>
+                    </bottom>
+                    <BorderPane.margin>
+                        <Insets top="8.0"/>
+                    </BorderPane.margin>
+                    <top>
+                        <VBox fx:id="paneMenu" prefHeight="462.0" prefWidth="235.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <JFXButton fx:id="btnHome" alignment="BASELINE_LEFT" graphicTextGap="30.0"
+                                           onAction="#loadDashboard" prefHeight="50.0" prefWidth="233.0"
+                                           ripplerFill="WHITE" styleClass="menuButton" text="Home" textFill="WHITE">
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="28"/>
+                                    </graphic>
+                                    <font>
+                                        <Font name="System Bold" size="13.0"/>
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                    <padding>
+                                        <Insets left="15.0"/>
+                                    </padding>
+                                </JFXButton>
+                                <JFXButton fx:id="btnStudent" alignment="BASELINE_LEFT" graphicTextGap="35.0"
+                                           layoutX="10.0" layoutY="10.0" onAction="#loadStudent" prefHeight="50.0"
+                                           prefWidth="233.0" ripplerFill="WHITE" styleClass="menuButton" text="Student"
+                                           textFill="WHITE">
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="CHILD" size="28"/>
+                                    </graphic>
+                                    <font>
+                                        <Font name="System Bold" size="13.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="10.0"/>
+                                    </VBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                    <padding>
+                                        <Insets left="15.0"/>
+                                    </padding>
+                                </JFXButton>
+                                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="30.0" layoutX="10.0" layoutY="52.0"
+                                           prefHeight="50.0" prefWidth="233.0" ripplerFill="WHITE"
+                                           styleClass="menuButton" text="Exam" textFill="WHITE">
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="BOOK" size="28"/>
+                                    </graphic>
+                                    <font>
+                                        <Font name="System Bold" size="13.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="10.0"/>
+                                    </VBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                    <padding>
+                                        <Insets left="15.0"/>
+                                    </padding>
+                                </JFXButton>
+                                <JFXButton fx:id="btnCourse" alignment="BASELINE_LEFT" graphicTextGap="32.0"
+                                           layoutX="10.0" layoutY="94.0" onAction="#loadCourse" prefHeight="50.0"
+                                           prefWidth="233.0" ripplerFill="WHITE" styleClass="menuButton" text="Courses"
+                                           textFill="WHITE">
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="FILE" size="28"/>
+                                    </graphic>
+                                    <font>
+                                        <Font name="System Bold" size="13.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="10.0"/>
+                                    </VBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                    <padding>
+                                        <Insets left="15.0"/>
+                                    </padding>
+                                </JFXButton>
+                                <JFXButton alignment="BASELINE_LEFT" graphicTextGap="32.0" layoutX="10.0"
+                                           layoutY="190.0" onAction="#loadUser" prefHeight="50.0" prefWidth="233.0"
+                                           ripplerFill="WHITE" styleClass="menuButton" text="User" textFill="WHITE">
+                                    <graphic>
+                                        <FontAwesomeIconView fill="WHITE" glyphName="USER" size="28"/>
+                                    </graphic>
+                                    <font>
+                                        <Font name="System Bold" size="13.0"/>
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                    <padding>
+                                        <Insets left="15.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets top="10.0"/>
+                                    </VBox.margin>
+                                </JFXButton>
+                            </children>
+                            <BorderPane.margin>
+                                <Insets top="40.0"/>
+                            </BorderPane.margin>
+                        </VBox>
+                    </top>
+                </BorderPane>
+            </left>
+            <center>
+                <StackPane fx:id="rootPane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER_LEFT">
+                    <BorderPane.margin>
+                        <Insets/>
+                    </BorderPane.margin>
+                </StackPane>
+            </center>
+        </BorderPane>
+    </children>
+    <stylesheets>
+        <URL value="@../Assets/CSS/Style.css"/>
+        <URL value="@../Assets/CSS/Style.css"/>
+    </stylesheets>
 </StackPane>

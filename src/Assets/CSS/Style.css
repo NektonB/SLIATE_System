@@ -10,6 +10,14 @@
     -fx-padding: 0;
 }
 
+.card-unpadded2 {
+    -fx-background-color: #f3f3f3;
+    -fx-background-radius: 4.0;
+    -fx-effect: dropshadow(gaussian, rgb(0.0, 0.0, 0.0, 0.15), 6.0, 0.7, 0.0,
+    1.5);
+    -fx-padding: 0;
+}
+
 .side-menu-unpadded {
     -fx-background-color: #6f3942;
     -fx-background-radius: 0 60 4 0;
@@ -22,6 +30,7 @@
 .card-title {
     -fx-background-radius: 5 5 0 0;
 }
+
 
 .list-view {
 
@@ -61,7 +70,7 @@
 }
 
 .sceneBorder {
-    -fx-border-color:  #6f3942;
+    -fx-border-color: #6f3942;
     -fx-border-width: 1.5px;
 }
 
@@ -78,69 +87,65 @@
     -fx-background-color: #ff0000;
 }
 
-.closeButton:pressed{
+.closeButton:pressed {
     -fx-background-color: #780303;
 }
 
-.sceneTextBox{
+.sceneTextBox {
     -fx-background-color: transparent;
     -fx-text-fill: #615c5c;
     -fx-font-size: 14px;
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
 }
-.sceneTextBox:hover{
+
+.sceneTextBox:hover {
     -fx-background-color: #e3e3e3;
 }
 
-.saveButton{
-    -fx-background-color:  #6f3942;
+.saveButton {
+    -fx-background-color: #783d47;
 }
 
-.textFill{
-   -fx-prompt-text-fill: #f3f3f3;
+.textFill {
+    -fx-prompt-text-fill: #f3f3f3;
     -fx-text-fill: #faf9f0;
 }
 
 
-
-.searchButton{
+.searchButton {
 
     -fx-background-color: #1c6789;
 }
 
 
-
 .radio-drawer {
-    -fx-cursor : hand;
+    -fx-cursor: hand;
 }
 
-.radio-drawer:selected .radio
-{
-    -fx-scale-x : 1.2;
-    -fx-scale-y : 1.2;
+.radio-drawer:selected .radio {
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
 
 }
 
 .radio-warning .radio,
 .radio-warning .radio:hover,
 .radio-warning .radio:focused,
-.radio-warning:selected .radio
-{
-    -fx-border-color : #FF8800;
+.radio-warning:selected .radio {
+    -fx-border-color: #FF8800;
     -fx-border-width: 6px;
 }
 
 .radio-danger .radio,
 .radio-danger .radio:hover,
 .radio-danger .radio:focused,
-.radio-danger:selected .radio
-{
-    -fx-border-color : #ffd85a;
+.radio-danger:selected .radio {
+    -fx-border-color: #ffd85a;
     -fx-border-width: 6px;
 }
 
-.gradiant{
+.gradiant {
     -fx-background-color: linear-gradient(#1974bb, #1b88bf, #7aa3e8);
 }
 
@@ -149,7 +154,6 @@
 .blue-titledPane {
     -fx-text-fill: white;
     -fx-text-alignment: center;
-
 
 
 }
@@ -179,18 +183,18 @@
 
 }
 
-.aaaaaa{
+.aaaaaa {
     -fx-background-color: #197abb;
 
 }
 
-.progress-bar{
+.progress-bar {
     -fx-progress-color: #1773a1;
     -fx-background-color: #FF8800;
     -fx-color-label-visible: true;
 }
 
-.menuButton{
+.menuButton {
     -fx-text-fill: #ffffff;
     -fx-text-alignment: center;
     -fx-font-size: 15px;

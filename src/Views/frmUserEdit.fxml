@@ -1,31 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="537.0" prefWidth="888.0" styleClass="sceneBorder" stylesheets="@../CSS/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserController">
-   <children>
-      <AnchorPane fx:id="contentPane" prefHeight="342.0" prefWidth="515.0">
-         <children>
-            <AnchorPane fx:id="titlePane" prefHeight="76.0" prefWidth="515.0" styleClass="titleBar">
-               <children>
-                  <Label layoutX="63.0" layoutY="21.0" text="User Info" textFill="WHITE">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                  </Label>
-                  <JFXButton alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="472.0" layoutY="5.0" onAction="#clossScene" prefHeight="32.0" prefWidth="40.0" ripplerFill="#e10700" styleClass="closeButton" text="Button">
-                     <graphic>
-                        <FontAwesomeIconView fx:id="btnExit" fill="#f2f2f2" glyphName="CLOSE" size="22" wrappingWidth="20.714285850524902" />
-                     </graphic>
-                  </JFXButton>
-               </children>
-            </AnchorPane>
-         </children>
-      </AnchorPane>
-   </children>
+<?import java.net.URL?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+           minWidth="-Infinity"
+           prefHeight="537.0" prefWidth="888.0" styleClass="sceneBorder"
+           xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Controllers.UserController">
+    <children>
+        <AnchorPane fx:id="contentPane" prefHeight="342.0" prefWidth="515.0">
+            <children>
+                <TableView layoutX="-2.0" layoutY="157.0" prefHeight="377.0" prefWidth="885.0"
+                           tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="157.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="User id"/>
+                        <TableColumn prefWidth="75.0" text="User name"/>
+                        <TableColumn prefWidth="75.0" text="Full name"/>
+                        <TableColumn prefWidth="75.0" text="NIC Number"/>
+                        <TableColumn prefWidth="75.0" text="Contact number"/>
+                        <TableColumn prefWidth="75.0" text="Status"/>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
+                </TableView>
+                <AnchorPane layoutY="53.0" prefHeight="100.0" prefWidth="885.0" style="-fx-background-color: #4091b6;"
+                            styleClass="card-unpadded" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <Label layoutX="156.0" layoutY="14.0" text="User Info" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="23.0"/>
+                            </font>
+                        </Label>
+                        <JFXTextField focusColor="#e4e4e4" labelFloat="true" layoutX="414.0" layoutY="39.0"
+                                      prefHeight="25.0" prefWidth="279.0" promptText="Search by index number or name"
+                                      styleClass="textFill" unFocusColor="#bfbfbf" AnchorPane.rightAnchor="192.0">
+                            <font>
+                                <Font size="13.0"/>
+                            </font>
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                        </JFXTextField>
+                        <JFXButton buttonType="RAISED" graphicTextGap="10.0" layoutX="709.0" layoutY="34.0"
+                                   prefHeight="36.0" prefWidth="84.0" styleClass="searchButton" text="Search"
+                                   textFill="WHITE" AnchorPane.rightAnchor="92.0">
+                            <graphic>
+                                <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="15"/>
+                            </graphic>
+                            <font>
+                                <Font name="System Bold" size="12.0"/>
+                            </font>
+                        </JFXButton>
+                    </children>
+                </AnchorPane>
+                <Pane layoutX="19.0" layoutY="16.0" prefHeight="107.0" prefWidth="117.0"
+                      style="-fx-background-color: #1974bb;" styleClass="card-unpadded">
+                    <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="38.0" layoutY="72.0" size="55"
+                                             wrappingWidth="40.000006914138794"/>
+                    </children>
+                </Pane>
+                <JFXButton alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="840.0"
+                           layoutY="3.0" onAction="#clossScene" prefHeight="36.0" prefWidth="40.0" ripplerFill="#e10700"
+                           styleClass="closeButton" text="Button" AnchorPane.rightAnchor="5.0">
+                    <graphic>
+                        <FontAwesomeIconView fx:id="btnExit" fill="#515050" glyphName="CLOSE" size="22" text=""
+                                             wrappingWidth="20.714285850524902"/>
+                    </graphic>
+                </JFXButton>
+            </children>
+            <stylesheets>
+                <URL value="@../Assets/CSS/Style.css"/>
+                <URL value="@../Assets/CSS/customRadioButton.css"/>
+            </stylesheets>
+        </AnchorPane>
+    </children>
+    <stylesheets>
+        <URL value="@../Assets/CSS/Style.css"/>
+        <URL value="@../Assets/CSS/Table.css"/>
+    </stylesheets>
 </StackPane>
