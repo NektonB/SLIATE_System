@@ -1,12 +1,15 @@
 package Controllers;
 
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -17,32 +20,47 @@ import java.util.ResourceBundle;
 public class UserController implements Initializable {
 
     @FXML
-    private AnchorPane contentPane;
+    private JFXButton btnViewUser;
 
     @FXML
-    private AnchorPane titlePane;
+    private Label lblTitle;
 
     @FXML
-    private FontAwesomeIconView btnExit;
+    private JFXTextField txtFullName;
 
-    private Stage stage;
+    @FXML
+    private JFXTextField txtNIC;
+
+    @FXML
+    private JFXTextField txtContactNumber;
+
+    @FXML
+    private JFXTextField txtEmail;
+
+    @FXML
+    private JFXTextField txtUserName;
+
+    @FXML
+    private JFXComboBox<String> cmbUserType;
+
+    @FXML
+    private JFXPasswordField txtPassword;
+
+    @FXML
+    private JFXComboBox<String> cmbStatus;
+
+    @FXML
+    private JFXButton btnSave;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
-    public void closeScene() {
-        Stage stage = (Stage) btnExit.getScene().getWindow();
-        stage.close();
-    }
-
-
     public void loadUser() {
         try {
-
             Stage productsStage = new Stage();
-            Parent user = FXMLLoader.load(getClass().getClassLoader().getResource("Views/frmUserEdit.fxml"));
+            Parent user = FXMLLoader.load(getClass().getClassLoader().getResource("Views/frmViewUser.fxml"));
             productsStage.setTitle("User");
             Scene scene = new Scene(user);
             productsStage.setScene(scene);
@@ -57,6 +75,4 @@ public class UserController implements Initializable {
             System.out.println(e);
         }
     }
-
-
 }

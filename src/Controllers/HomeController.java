@@ -40,8 +40,8 @@ public class HomeController implements Initializable {
     @FXML
     private JFXButton btnCourse;
 
-    private JFXButton temp = null;
-    private JFXButton recover = null;
+    private final JFXButton temp = null;
+    private final JFXButton recover = null;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -109,7 +109,6 @@ public class HomeController implements Initializable {
 
     public void loadUser() {
         try {
-
             Stage productsStage = new Stage();
             Parent user = FXMLLoader.load(getClass().getClassLoader().getResource("Views/frmUser.fxml"));
             productsStage.setTitle("User");

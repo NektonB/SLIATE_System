@@ -23,7 +23,7 @@ public class DashboardController implements Initializable {
     public void loadUserView() throws Exception {
         try {
             Stage productsStage = new Stage();
-            Parent user = FXMLLoader.load(getClass().getClassLoader().getResource("Views/frmUserEdit.fxml"));
+            Parent user = FXMLLoader.load(getClass().getClassLoader().getResource("Views/frmViewUser.fxml"));
             productsStage.setTitle("User Management");
             Scene scene = new Scene(user);
             productsStage.setScene(scene);
