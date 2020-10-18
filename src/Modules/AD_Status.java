@@ -1,14 +1,27 @@
 package Modules;
 
-import javafx.fxml.Initializable;
+public class AD_Status {
+    private int id = 0;
+    private String status = "";
 
-import java.net.URL;
-import java.util.ResourceBundle;
+    public void resetALl() {
+        setId(0);
+        setStatus("");
+    }
 
-public class AD_Status implements Initializable {
+    public int getId() {
+        return id;
+    }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

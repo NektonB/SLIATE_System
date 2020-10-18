@@ -4,8 +4,8 @@ import Controllers.Alerts;
 import Controllers.ObjectGenerator;
 import DB_Conn.ConnConfig;
 import DB_Conn.ConnectDB;
-import Modules.BackupData;
-import Modules.ConnectionInfo;
+import Modules.*;
+import com.jfoenix.controls.JFXComboBox;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,9 +16,13 @@ public class DataReader {
     PreparedStatement pst;
     Connection conn;
 
+    Alerts alerts;
+
     BackupData backupData;
     ConnectionInfo connectionInfo;
-    Alerts alerts;
+    User user;
+    UserType userType;
+    AD_Status ad_status;
 
     public DataReader() {
         try {
@@ -27,7 +31,9 @@ public class DataReader {
                 backupData = ObjectGenerator.getBackupData();
                 connectionInfo = ObjectGenerator.getConnectionInfo();
                 alerts = ObjectGenerator.getAlerts();
-
+                user = ObjectGenerator.getUser();
+                userType = ObjectGenerator.getUserType();
+                ad_status = ObjectGenerator.getAd_status();
             });
             readyData.setName("DataReader");
             readyData.start();
@@ -88,4 +94,61 @@ public class DataReader {
             }
         }
     }
+
+    public void fillStatusCombo(JFXComboBox cmbStatus) {
+        ResultSet rs = null;
+        cmbStatus.getItems().clear();
+        try {
+            pst = conn.prepareStatement("SELECT status FROM ad_status");
+            rs = pst.executeQuery();
+            if (!rs.isBeforeFirst()) {
+
+            }
+            while (rs.next()) {
+                cmbStatus.getItems().add(rs.getString(1));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (!rs.isClosed()) {
+                    rs.close();
+                }
+                if (!pst.isClosed()) {
+                    pst.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void fillUserTypeCombo(JFXComboBox cmbUserType) {
+        ResultSet rs = null;
+        cmbUserType.getItems().clear();
+        try {
+            pst = conn.prepareStatement("SELECT type FROM user_type");
+            rs = pst.executeQuery();
+            if (!rs.isBeforeFirst()) {
+
+            }
+            while (rs.next()) {
+                cmbUserType.getItems().add(rs.getString(1));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (!rs.isClosed()) {
+                    rs.close();
+                }
+                if (!pst.isClosed()) {
+                    pst.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

@@ -1,5 +1,10 @@
 package Controllers;
 
+import DataControllers.DataReader;
+import DataControllers.DataWriter;
+import Modules.AD_Status;
+import Modules.User;
+import Modules.UserType;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXPasswordField;
@@ -19,45 +24,140 @@ import java.util.ResourceBundle;
 
 public class UserController implements Initializable {
 
+    DataWriter dataWriter;
+    DataReader dataReader;
+
+    User user;
+    UserType userType;
+    AD_Status ad_status;
     @FXML
     private JFXButton btnViewUser;
-
     @FXML
     private Label lblTitle;
-
     @FXML
     private JFXTextField txtFullName;
-
     @FXML
     private JFXTextField txtNIC;
-
     @FXML
     private JFXTextField txtContactNumber;
-
     @FXML
     private JFXTextField txtEmail;
-
     @FXML
     private JFXTextField txtUserName;
-
     @FXML
     private JFXComboBox<String> cmbUserType;
-
     @FXML
     private JFXPasswordField txtPassword;
-
     @FXML
     private JFXComboBox<String> cmbStatus;
-
     @FXML
     private JFXButton btnSave;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
+            dataReader = ObjectGenerator.getDataReader();
+            user = ObjectGenerator.getUser();
+            userType = ObjectGenerator.getUserType();
+            ad_status = ObjectGenerator.getAd_status();
 
+            dataReader.fillStatusCombo(cmbStatus);
+            cmbStatus.setValue("Active");
+            dataReader.fillUserTypeCombo(cmbUserType);
+            cmbStatus.setValue("Guest");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public void loadUser() {
+    public boolean validateFiled() {
+        if (!txtNIC.getText().isEmpty()) {
+            txtNIC.setStyle("-fx-background-color: none");
+        } else {
+            txtNIC.setStyle("-fx-background-color: rgba(255,0,0,0.1)");
+            //txtNIC.setStyle("-fx-border-color: transparent transparent rgba(255,0,0,) transparent");
+        }
+
+        if (!txtUserName.getText().isEmpty()) {
+            txtUserName.setStyle("-fx-background-color: none");
+        } else {
+            txtUserName.setStyle("-fx-background-color: rgba(255,0,0,0.1)");
+            //txtNIC.setStyle("-fx-border-color: transparent transparent rgba(255,0,0,) transparent");
+        }
+
+        if (!txtPassword.getText().isEmpty()) {
+            txtPassword.setStyle("-fx-background-color: none");
+        } else {
+            txtPassword.setStyle("-fx-background-color: rgba(255,0,0,0.1)");
+            //txtNIC.setStyle("-fx-border-color: transparent transparent rgba(255,0,0,) transparent");
+        }
+
+        if (!cmbUserType.getValue().isEmpty()) {
+            cmbUserType.setStyle("-fx-background-color: none");
+        } else {
+            cmbUserType.setStyle("-fx-background-color: rgba(255,0,0,0.1)");
+            //txtNIC.setStyle("-fx-border-color: transparent transparent rgba(255,0,0,) transparent");
+        }
+
+        if (!cmbStatus.getValue().isEmpty()) {
+            cmbStatus.setStyle("-fx-background-color: none");
+        } else {
+            cmbStatus.setStyle("-fx-background-color: rgba(255,0,0,0.1)");
+            //txtNIC.setStyle("-fx-border-color: transparent transparent rgba(255,0,0,) transparent");
+        }
+
+        return !txtNIC.getText().isEmpty() && !txtUserName.getText().isEmpty() && !txtPassword.getText().isEmpty() && !cmbUserType.getValue().isEmpty() && !cmbUserType.getValue().isEmpty();
+    }
+
+    public void resetFiled() {
+        if (!txtNIC.getText().isEmpty()) {
+            txtNIC.setStyle("-fx-background-color: none");
+            //txtNIC.setStyle("-fx-border-color: none");
+        }
+
+        if (!txtUserName.getText().isEmpty()) {
+            txtNIC.setStyle("-fx-background-color: none");
+        }
+
+        if (!txtPassword.getText().isEmpty()) {
+            txtNIC.setStyle("-fx-background-color: none");
+        }
+
+        if (!cmbUserType.getValue().isEmpty()) {
+            txtNIC.setStyle("-fx-background-color: none");
+        }
+
+        if (!cmbStatus.getValue().isEmpty()) {
+            txtNIC.setStyle("-fx-background-color: none");
+        }
+    }
+
+    public void saveUser() {
+        try {
+            if (validateFiled()) {
+                user.setFullName(txtFullName.getText());
+                user.setNic(txtNIC.getText());
+                user.setContactNumber(txtContactNumber.getText());
+                user.setEmail(txtEmail.getText());
+                user.setUserName(txtUserName.getText());
+                user.setPassword(txtPassword.getText());
+
+                userType.setType(cmbUserType.getValue());
+
+                ad_status.setStatus(cmbStatus.getValue());
+
+                if (user.getId() == 0) {
+
+                } else {
+
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadViewUser() {
         try {
             Stage productsStage = new Stage();
             Parent user = FXMLLoader.load(getClass().getClassLoader().getResource("Views/frmViewUser.fxml"));

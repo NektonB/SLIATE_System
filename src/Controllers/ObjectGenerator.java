@@ -2,10 +2,7 @@ package Controllers;
 
 import DataControllers.DataReader;
 import DataControllers.DataWriter;
-import Modules.BackupData;
-import Modules.ConnectionInfo;
-import Modules.User;
-import Modules.UserType;
+import Modules.*;
 
 public class ObjectGenerator {
 
@@ -17,6 +14,7 @@ public class ObjectGenerator {
     private static AutoBackup autoBackup;
     private static User user;
     private static UserType userType;
+    private static AD_Status ad_status;
 
     public static synchronized void readyAll() {
         try {
@@ -86,5 +84,12 @@ public class ObjectGenerator {
             userType = new UserType();
         }
         return userType;
+    }
+
+    public static AD_Status getAd_status() {
+        if (ad_status == null) {
+            ad_status = new AD_Status();
+        }
+        return ad_status;
     }
 }
