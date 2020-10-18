@@ -64,7 +64,7 @@ public class UserController implements Initializable {
             dataReader.fillStatusCombo(cmbStatus);
             cmbStatus.setValue("Active");
             dataReader.fillUserTypeCombo(cmbUserType);
-            cmbStatus.setValue("Guest");
+            cmbUserType.setValue("Guest");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -123,11 +123,11 @@ public class UserController implements Initializable {
             txtNIC.setStyle("-fx-background-color: none");
         }
 
-        if (!cmbUserType.getValue().isEmpty()) {
+        if (!cmbUserType.getSelectionModel().isEmpty()) {
             txtNIC.setStyle("-fx-background-color: none");
         }
 
-        if (!cmbStatus.getValue().isEmpty()) {
+        if (!cmbStatus.getSelectionModel().isEmpty()) {
             txtNIC.setStyle("-fx-background-color: none");
         }
     }
