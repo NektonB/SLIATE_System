@@ -15,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -26,6 +28,8 @@ public class UserController implements Initializable {
 
     DataWriter dataWriter;
     DataReader dataReader;
+
+    Alerts alerts;
 
     User user;
     UserType userType;
@@ -57,9 +61,11 @@ public class UserController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             dataReader = ObjectGenerator.getDataReader();
+            dataWriter = ObjectGenerator.getDataWriter();
             user = ObjectGenerator.getUser();
             userType = ObjectGenerator.getUserType();
             ad_status = ObjectGenerator.getAd_status();
+            alerts = ObjectGenerator.getAlerts();
 
             dataReader.fillStatusCombo(cmbStatus);
             cmbStatus.setValue("Active");
@@ -92,7 +98,7 @@ public class UserController implements Initializable {
             //txtNIC.setStyle("-fx-border-color: transparent transparent rgba(255,0,0,) transparent");
         }
 
-        if (!cmbUserType.getValue().isEmpty()) {
+        /*if (!cmbUserType.getValue().isEmpty()) {
             cmbUserType.setStyle("-fx-background-color: none");
         } else {
             cmbUserType.setStyle("-fx-background-color: rgba(255,0,0,0.1)");
@@ -104,7 +110,7 @@ public class UserController implements Initializable {
         } else {
             cmbStatus.setStyle("-fx-background-color: rgba(255,0,0,0.1)");
             //txtNIC.setStyle("-fx-border-color: transparent transparent rgba(255,0,0,) transparent");
-        }
+        }*/
 
         return !txtNIC.getText().isEmpty() && !txtUserName.getText().isEmpty() && !txtPassword.getText().isEmpty() && !cmbUserType.getValue().isEmpty() && !cmbUserType.getValue().isEmpty();
     }
@@ -116,20 +122,20 @@ public class UserController implements Initializable {
         }
 
         if (!txtUserName.getText().isEmpty()) {
-            txtNIC.setStyle("-fx-background-color: none");
+            txtUserName.setStyle("-fx-background-color: none");
         }
 
         if (!txtPassword.getText().isEmpty()) {
-            txtNIC.setStyle("-fx-background-color: none");
+            txtPassword.setStyle("-fx-background-color: none");
         }
 
-        if (!cmbUserType.getSelectionModel().isEmpty()) {
-            txtNIC.setStyle("-fx-background-color: none");
+        /*if (!cmbUserType.getSelectionModel().isEmpty()) {
+            cmbUserType.setStyle("-fx-background-color: none");
         }
 
         if (!cmbStatus.getSelectionModel().isEmpty()) {
-            txtNIC.setStyle("-fx-background-color: none");
-        }
+            cmbUserType.setStyle("-fx-background-color: none");
+        }*/
     }
 
     public void saveUser() {
@@ -142,19 +148,44 @@ public class UserController implements Initializable {
                 user.setUserName(txtUserName.getText());
                 user.setPassword(txtPassword.getText());
 
-                userType.setType(cmbUserType.getValue());
+                dataReader.getUserTypeByType(cmbUserType.getValue());
+                dataReader.getAD_StatusByStatus(cmbStatus.getValue());
 
-                ad_status.setStatus(cmbStatus.getValue());
-
-                if (user.getId() == 0) {
-
-                } else {
-
+                String operation = dataWriter.SU_User();
+                if (operation.equals("Save")) {
+                    resetAll();
+                    alerts.getSuccessNotify("User Registration", "Congratulation Chief..!\nUser registration successful");
+                } else if (operation.equals("Update")) {
+                    resetAll();
+                    alerts.getSuccessNotify("User Update", "Congratulation Chief..!\nUser update successful");
+                } else if (operation.equals("failed")) {
+                    alerts.getSuccessNotify("Error", "Sorry Chief..!\nOperation unsuccessful");
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void saveUser_key(KeyEvent event) {
+        if (event.isControlDown() && event.getCode().equals(KeyCode.S)) {
+            saveUser();
+        }
+    }
+
+    public void resetAll() {
+        txtFullName.setText("");
+        txtNIC.setText("");
+        txtContactNumber.setText("");
+        txtEmail.setText("");
+        txtUserName.setText("");
+        txtPassword.setText("");
+        cmbStatus.setValue("Active");
+        cmbUserType.setValue("Guest");
+
+        user.resetAll();
+        userType.resetAll();
+        ad_status.resetAll();
     }
 
     public void loadViewUser() {

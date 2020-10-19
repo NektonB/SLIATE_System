@@ -50,10 +50,10 @@
                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="157.0">
                     <columns>
                         <TableColumn fx:id="tcId" prefWidth="75.0" text="User id" visible="false"/>
-                        <TableColumn fx:id="tcUserName" prefWidth="75.0" text="User name"/>
-                        <TableColumn fx:id="tcFullName" prefWidth="75.0" text="Full name"/>
+                        <TableColumn fx:id="tcUserName" prefWidth="75.0" text="User Name"/>
+                        <TableColumn fx:id="tcFullName" prefWidth="75.0" text="Full Name"/>
                         <TableColumn fx:id="tcNIC" prefWidth="75.0" text="NIC Number"/>
-                        <TableColumn fx:id="tcContactNumber" prefWidth="75.0" text="Contact number"/>
+                        <TableColumn fx:id="tcContactNumber" prefWidth="75.0" text="Contact Number"/>
                         <TableColumn fx:id="tcStatus" prefWidth="75.0" text="Status"/>
                     </columns>
                     <columnResizePolicy>
@@ -68,7 +68,7 @@
                     </children>
                 </Pane>
                 <JFXButton fx:id="btnClose" alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0"
-                           layoutX="840.0" layoutY="3.0" onAction="#closeScene" prefHeight="36.0" prefWidth="40.0"
+                           layoutX="840.0" layoutY="3.0" onAction="#closeMe" prefHeight="36.0" prefWidth="40.0"
                            ripplerFill="#e10700" styleClass="closeButton" text="Button" AnchorPane.rightAnchor="5.0">
                     <graphic>
                         <FontAwesomeIconView fx:id="btnExit" fill="#515050" glyphName="CLOSE" size="22" text=""

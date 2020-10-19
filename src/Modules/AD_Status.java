@@ -4,7 +4,7 @@ public class AD_Status {
     private int id = 0;
     private String status = "";
 
-    public void resetALl() {
+    public void resetAll() {
         setId(0);
         setStatus("");
     }
