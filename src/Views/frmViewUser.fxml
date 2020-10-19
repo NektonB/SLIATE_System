@@ -45,9 +45,10 @@
                         </Label>
                     </children>
                 </AnchorPane>
-                <TableView fx:id="tblUser" layoutX="-2.0" layoutY="157.0" prefHeight="377.0" prefWidth="885.0"
-                           tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
-                           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="157.0">
+                <TableView fx:id="tblUser" layoutX="-2.0" layoutY="157.0" onKeyReleased="#selectUser_Key"
+                           prefHeight="377.0" prefWidth="885.0" tableMenuButtonVisible="true"
+                           AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                           AnchorPane.topAnchor="157.0">
                     <columns>
                         <TableColumn fx:id="tcId" prefWidth="75.0" text="User id" visible="false"/>
                         <TableColumn fx:id="tcUserName" prefWidth="75.0" text="User Name"/>

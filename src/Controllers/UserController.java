@@ -191,7 +191,8 @@ public class UserController implements Initializable {
     public void loadViewUser() {
         try {
             Stage productsStage = new Stage();
-            Parent user = FXMLLoader.load(getClass().getClassLoader().getResource("Views/frmViewUser.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("Views/frmViewUser.fxml"));
+            Parent user = loader.load();
             productsStage.setTitle("User");
             Scene scene = new Scene(user);
             productsStage.setScene(scene);
@@ -199,6 +200,10 @@ public class UserController implements Initializable {
             //productsStage.getIcons().add(new Image("/images/Main_01.png"));
             productsStage.setResizable(false);
             productsStage.initModality(Modality.APPLICATION_MODAL);
+
+            ViewUserController controller = loader.getController();
+            //controller.setLoadDataFunction(resetAll());
+
             productsStage.show();
 
         } catch (Exception e) {

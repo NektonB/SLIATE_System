@@ -257,4 +257,44 @@ public class DataReader {
         }
     }
 
+    public void getUserById(int id) {
+        ResultSet rs = null;
+        try {
+            pst = conn.prepareStatement("SELECT u.id,u.full_name,u.nic_number,u.contact_number,u.email,u.user_name,u.password,ut.type,ads.status FROM user u INNER JOIN ad_status ads on u.ads_id = ads.id INNER JOIN user_type ut on u.ut_id = ut.id WHERE u.id = ?");
+            pst.setInt(1, id);
+            rs = pst.executeQuery();
+
+            if (!rs.isBeforeFirst()) {
+                user.resetAll();
+            }
+            while (rs.next()) {
+                user.setId(rs.getInt(1));
+                user.setFullName(rs.getString(2));
+                user.setNic(rs.getString(3));
+                user.setContactNumber(rs.getString(4));
+                user.setEmail(rs.getString(5));
+                user.setUserName(rs.getString(6));
+                user.setPassword(rs.getString(7));
+
+                userType.setType(rs.getString(8));
+                ad_status.setStatus(rs.getString(9));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            alerts.getErrorAlert(e);
+        } finally {
+            try {
+                if (!rs.isClosed()) {
+                    rs.close();
+                }
+                if (!pst.isClosed()) {
+                    pst.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                alerts.getErrorAlert(e);
+            }
+        }
+    }
+
 }

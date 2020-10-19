@@ -15,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -32,42 +34,34 @@ public class ViewUserController implements Initializable {
     UserType userType;
     AD_Status ad_status;
 
+    private void loadData() {
+
+    }
+
     @FXML
     private AnchorPane contentPane;
-
     @FXML
     private JFXTextField txtSearch;
-
     @FXML
     private JFXButton btnSearch;
-
     @FXML
     private TableView<UserRow> tblUser;
-
     @FXML
     private TableColumn<UserRow, Integer> tcId;
-
     @FXML
     private TableColumn<UserRow, String> tcUserName;
-
     @FXML
     private TableColumn<UserRow, String> tcFullName;
-
     @FXML
     private TableColumn<UserRow, String> tcNIC;
-
     @FXML
     private TableColumn<UserRow, String> tcContactNumber;
-
     @FXML
     private TableColumn<UserRow, String> tcStatus;
-
     @FXML
     private JFXButton btnClose;
-
     @FXML
     private FontAwesomeIconView btnExit;
-
     private Stage stage;
 
     @Override
@@ -84,6 +78,27 @@ public class ViewUserController implements Initializable {
             dataReader.fillUserTable(tblUser);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void setLoadDataFunction(Void loadData) {
+        //this.loadData = loadData;
+    }
+
+    public void selectUser() {
+        try {
+            if (!tblUser.getItems().isEmpty()) {
+                UserRow userRow = tblUser.getSelectionModel().getSelectedItem();
+                dataReader.getUserById(userRow.getId());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void selectUser_Key(KeyEvent event) {
+        if (event.getCode().equals(KeyCode.ENTER)) {
+            selectUser();
         }
     }
 
