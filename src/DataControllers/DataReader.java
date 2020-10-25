@@ -11,6 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,6 +19,7 @@ import java.sql.ResultSet;
 public class DataReader {
 
     PreparedStatement pst;
+    CallableStatement cst;
     Connection conn;
 
     Alerts alerts;
@@ -103,8 +105,10 @@ public class DataReader {
         ResultSet rs = null;
         cmbStatus.getItems().clear();
         try {
-            pst = conn.prepareStatement("SELECT status FROM ad_status");
-            rs = pst.executeQuery();
+            /*pst = conn.prepareStatement("SELECT status FROM ad_status");
+            rs = pst.executeQuery();*/
+            cst = conn.prepareCall("CALL getAD_Status()");
+            rs = cst.getResultSet();
             if (!rs.isBeforeFirst()) {
 
             }
