@@ -105,9 +105,8 @@ public class DataReader {
         ResultSet rs = null;
         cmbStatus.getItems().clear();
         try {
-            /*pst = conn.prepareStatement("SELECT status FROM ad_status");
-            rs = pst.executeQuery();*/
             cst = conn.prepareCall("CALL getAD_Status()");
+            cst.execute();
             rs = cst.getResultSet();
             if (!rs.isBeforeFirst()) {
 
@@ -135,8 +134,9 @@ public class DataReader {
         ResultSet rs = null;
         cmbUserType.getItems().clear();
         try {
-            pst = conn.prepareStatement("SELECT type FROM user_type");
-            rs = pst.executeQuery();
+            cst = conn.prepareCall("CALL getUserType()");
+            cst.execute();
+            rs = cst.getResultSet();
             if (!rs.isBeforeFirst()) {
 
             }
