@@ -148,8 +148,8 @@ public class UserController implements Initializable {
                 user.setUserName(txtUserName.getText());
                 user.setPassword(txtPassword.getText());
 
-                dataReader.getUserTypeByType(cmbUserType.getValue());
-                dataReader.getAD_StatusByStatus(cmbStatus.getValue());
+                dataReader.getUT_DetailsByType(cmbUserType.getValue());
+                dataReader.getADS_DetailsByStatus(cmbStatus.getValue());
 
                 String operation = dataWriter.SU_User();
                 if (operation.equals("Save")) {

@@ -89,7 +89,7 @@ public class ViewUserController implements Initializable {
         try {
             if (!tblUser.getItems().isEmpty()) {
                 UserRow userRow = tblUser.getSelectionModel().getSelectedItem();
-                dataReader.getUserById(userRow.getId());
+                dataReader.getUserDetailsById(userRow.getId());
             }
         } catch (Exception e) {
             e.printStackTrace();

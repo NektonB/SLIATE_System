@@ -159,12 +159,13 @@ public class DataReader {
         }
     }
 
-    public void getUserTypeByType(String type) {
+    public void getUT_DetailsByType(String type) {
         ResultSet rs = null;
         try {
-            pst = conn.prepareStatement("SELECT * FROM user_type WHERE type = ?");
-            pst.setString(1, type);
-            rs = pst.executeQuery();
+            cst = conn.prepareCall("CALL getUT_DetailsByType(?)");
+            cst.setString(1, type);
+            cst.execute();
+            rs = cst.getResultSet();
 
             if (!rs.isBeforeFirst()) {
                 userType.resetAll();
@@ -191,12 +192,13 @@ public class DataReader {
         }
     }
 
-    public void getAD_StatusByStatus(String status) {
+    public void getADS_DetailsByStatus(String status) {
         ResultSet rs = null;
         try {
-            pst = conn.prepareStatement("SELECT * FROM ad_status WHERE status = ?");
-            pst.setString(1, status);
-            rs = pst.executeQuery();
+            cst = conn.prepareCall("CALL getADS_DetailsByStatus(?)");
+            cst.setString(1, status);
+            cst.execute();
+            rs = cst.getResultSet();
 
             if (!rs.isBeforeFirst()) {
                 ad_status.resetAll();
@@ -227,8 +229,9 @@ public class DataReader {
         ResultSet rs = null;
         ObservableList<ViewUserController.UserRow> userRows = FXCollections.observableArrayList();
         try {
-            pst = conn.prepareStatement("SELECT u.id,user_name,u.full_name,u.nic_number,u.contact_number,ads.status FROM user u INNER JOIN ad_status ads on u.ads_id = ads.id");
-            rs = pst.executeQuery();
+            cst = conn.prepareCall("CALL fillUserTable()");
+            cst.execute();
+            rs = cst.getResultSet();
             /*if (!rs.isBeforeFirst()) {
                 user.resetAll();
             }*/
@@ -261,12 +264,13 @@ public class DataReader {
         }
     }
 
-    public void getUserById(int id) {
+    public void getUserDetailsById(int id) {
         ResultSet rs = null;
         try {
-            pst = conn.prepareStatement("SELECT u.id,u.full_name,u.nic_number,u.contact_number,u.email,u.user_name,u.password,ut.type,ads.status FROM user u INNER JOIN ad_status ads on u.ads_id = ads.id INNER JOIN user_type ut on u.ut_id = ut.id WHERE u.id = ?");
-            pst.setInt(1, id);
-            rs = pst.executeQuery();
+            cst = conn.prepareCall("CALL getUserDetailsById(?)");
+            cst.setInt(1, id);
+            cst.execute();
+            rs = cst.getResultSet();
 
             if (!rs.isBeforeFirst()) {
                 user.resetAll();
