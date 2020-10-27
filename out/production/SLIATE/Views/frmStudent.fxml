@@ -1,36 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
+<?import java.lang.String?>
 <?import java.net.URL?>
-<StackPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-           minWidth="-Infinity"
-           prefHeight="588.0" prefWidth="1091.0" styleClass="sceneBorder"
-           xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Controllers.StudentController">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="1091.0" styleClass="sceneBorder" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.StudentController">
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0">
             <top>
-                <AnchorPane fx:id="titlePane" prefHeight="47.0" prefWidth="1081.0" styleClass="titleBar"
-                            BorderPane.alignment="CENTER">
+                <AnchorPane fx:id="titlePane" prefHeight="47.0" prefWidth="1081.0" styleClass="titleBar" BorderPane.alignment="CENTER">
                     <children>
                         <Label layoutX="20.0" layoutY="11.0" text="Add new Student" textFill="WHITE">
                             <font>
-                                <Font size="17.0"/>
+                                <Font size="17.0" />
                             </font>
                         </Label>
-                        <JFXButton alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0"
-                                   layoutX="1041.0" layoutY="7.0" onAction="#clossScene" prefHeight="32.0"
-                                   prefWidth="40.0" ripplerFill="#e10700" styleClass="closeButton" text="Button"
-                                   AnchorPane.rightAnchor="7.0">
+                        <JFXButton alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="1041.0" layoutY="7.0" onAction="#clossScene" prefHeight="32.0" prefWidth="40.0" ripplerFill="#e10700" styleClass="closeButton" text="Button" AnchorPane.rightAnchor="7.0">
                             <graphic>
-                                <FontAwesomeIconView fx:id="btnExit" fill="#f2f2f2" glyphName="CLOSE" size="22" text=""
-                                                     wrappingWidth="20.714285850524902"/>
+                                <FontAwesomeIconView fx:id="btnExit" fill="#f2f2f2" glyphName="CLOSE" size="22" text="" wrappingWidth="20.714285850524902" />
                             </graphic>
                         </JFXButton>
                     </children>
@@ -39,181 +45,172 @@
             <center>
                 <AnchorPane prefHeight="538.0" prefWidth="1118.0" BorderPane.alignment="CENTER">
                     <children>
-                        <TitledPane animated="false" collapsible="false" contentDisplay="CENTER" layoutX="25.0"
-                                    layoutY="24.0" prefHeight="484.0" prefWidth="335.0" text="Personal Details">
+                        <TitledPane animated="false" collapsible="false" contentDisplay="CENTER" layoutX="25.0" layoutY="24.0" prefHeight="484.0" prefWidth="335.0" text="Personal Details">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="333.0">
                                     <children>
                                         <VBox layoutX="14.0" layoutY="14.0" prefHeight="419.0" prefWidth="303.0">
                                             <children>
-                                                <JFXTextField focusColor="#296aa6" labelFloat="true"
-                                                              promptText="First Name" unFocusColor="#979696">
+                                                <JFXTextField focusColor="#296aa6" labelFloat="true" promptText="First Name" unFocusColor="#979696">
                                                     <VBox.margin>
-                                                        <Insets top="10.0"/>
+                                                        <Insets top="10.0" />
                                                     </VBox.margin>
                                                 </JFXTextField>
-                                                <JFXTextField focusColor="#296aa6" labelFloat="true" layoutX="10.0"
-                                                              layoutY="10.0" promptText="Last Name"
-                                                              unFocusColor="#979696">
+                                                <JFXTextField focusColor="#296aa6" labelFloat="true" layoutX="10.0" layoutY="10.0" promptText="Middle Name" unFocusColor="#979696">
                                                     <VBox.margin>
-                                                        <Insets top="20.0"/>
+                                                        <Insets top="20.0" />
                                                     </VBox.margin>
                                                 </JFXTextField>
-                                                <JFXTextField focusColor="#296aa6" labelFloat="true" layoutX="10.0"
-                                                              layoutY="41.0" promptText="Mobile Number"
-                                                              unFocusColor="#979696">
+                                                <JFXTextField focusColor="#296aa6" labelFloat="true" layoutX="10.0" layoutY="41.0" promptText="Last name" unFocusColor="#979696">
                                                     <VBox.margin>
-                                                        <Insets top="20.0"/>
+                                                        <Insets top="20.0" />
                                                     </VBox.margin>
                                                 </JFXTextField>
-                                                <JFXTextField focusColor="#296aa6" labelFloat="true" layoutX="10.0"
-                                                              layoutY="72.0" promptText="Email Address"
-                                                              unFocusColor="#979696">
+                                                <JFXTextField focusColor="#296aa6" labelFloat="true" layoutX="10.0" layoutY="72.0" promptText="NIC number" unFocusColor="#979696">
                                                     <VBox.margin>
-                                                        <Insets top="20.0"/>
+                                                        <Insets top="20.0" />
                                                     </VBox.margin>
                                                 </JFXTextField>
-                                                <JFXTextArea focusColor="#296aa6" labelFloat="true" prefHeight="83.0"
-                                                             prefWidth="303.0" promptText="Perment Address"
-                                                             unFocusColor="#979696">
-                                                    <VBox.margin>
-                                                        <Insets top="20.0"/>
-                                                    </VBox.margin>
-                                                </JFXTextArea>
                                                 <Label text="Gender" textFill="#6b6666">
                                                     <VBox.margin>
-                                                        <Insets top="20.0"/>
+                                                        <Insets top="20.0" />
                                                     </VBox.margin>
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="34.0" prefWidth="303.0">
                                                     <children>
                                                         <RadioButton mnemonicParsing="false" text="Male">
                                                             <styleClass>
-                                                                <String fx:value="radio-danger"/>
-                                                                <String fx:value="radio-drawer"/>
+                                                                <String fx:value="radio-danger" />
+                                                                <String fx:value="radio-drawer" />
                                                             </styleClass>
                                                             <toggleGroup>
-                                                                <ToggleGroup fx:id="gender"/>
+                                                                <ToggleGroup fx:id="gender" />
                                                             </toggleGroup>
                                                         </RadioButton>
-                                                        <RadioButton mnemonicParsing="false" text="Female"
-                                                                     toggleGroup="$gender">
+                                                        <RadioButton mnemonicParsing="false" text="Female" toggleGroup="$gender">
                                                             <styleClass>
-                                                                <String fx:value="radio-warning"/>
-                                                                <String fx:value="radio-drawer"/>
+                                                                <String fx:value="radio-warning" />
+                                                                <String fx:value="radio-drawer" />
                                                             </styleClass>
                                                             <HBox.margin>
-                                                                <Insets left="60.0"/>
+                                                                <Insets left="60.0" />
                                                             </HBox.margin>
                                                         </RadioButton>
                                                     </children>
                                                 </HBox>
+                                    <JFXComboBox focusColor="#4072a8" labelFloat="true" prefHeight="31.0" prefWidth="317.0" promptText="Status" unFocusColor="#979696">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </JFXComboBox>
                                             </children>
                                         </VBox>
                                     </children>
                                 </AnchorPane>
                             </content>
                             <styleClass>
-                                <String fx:value="card-unpadded"/>
-                                <String fx:value="blue-titledPane"/>
+                                <String fx:value="card-unpadded" />
+                                <String fx:value="blue-titledPane" />
                             </styleClass>
                             <font>
-                                <Font size="21.0"/>
+                                <Font size="21.0" />
                             </font>
                         </TitledPane>
-                        <TitledPane animated="false" collapsible="false" contentDisplay="CENTER" layoutX="384.0"
-                                    layoutY="24.0" prefHeight="483.0" prefWidth="335.0" text="Course Details">
+                        <TitledPane animated="false" collapsible="false" contentDisplay="CENTER" layoutX="384.0" layoutY="24.0" prefHeight="483.0" prefWidth="335.0" text="Course Details">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="333.0">
                                     <children>
                                         <VBox layoutX="14.0" layoutY="14.0" prefHeight="419.0" prefWidth="303.0">
                                             <children>
-                                                <JFXComboBox focusColor="#4072a8" labelFloat="true" prefHeight="31.0"
-                                                             prefWidth="317.0" promptText="Department"
-                                                             unFocusColor="#979696">
+                                                <JFXComboBox focusColor="#4072a8" labelFloat="true" prefHeight="31.0" prefWidth="317.0" promptText="Year" unFocusColor="#979696">
                                                     <VBox.margin>
-                                                        <Insets top="10.0"/>
+                                                        <Insets top="10.0" />
                                                     </VBox.margin>
                                                 </JFXComboBox>
-                                                <JFXComboBox focusColor="#4072a8" labelFloat="true" layoutX="10.0"
-                                                             layoutY="122.0" prefHeight="31.0" prefWidth="317.0"
-                                                             promptText="SLIATE Branch" unFocusColor="#979696">
+                                                <JFXComboBox focusColor="#4072a8" labelFloat="true" layoutX="10.0" layoutY="122.0" prefHeight="31.0" prefWidth="317.0" promptText="Type" unFocusColor="#979696">
                                                     <VBox.margin>
-                                                        <Insets top="20.0"/>
+                                                        <Insets top="20.0" />
                                                     </VBox.margin>
                                                 </JFXComboBox>
                                                 <Label text="Level" textFill="#545252">
                                                     <VBox.margin>
-                                                        <Insets top="20.0"/>
+                                                        <Insets top="20.0" />
                                                     </VBox.margin>
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="34.0" prefWidth="303.0">
                                                     <children>
                                                         <RadioButton mnemonicParsing="false" text="Degree">
                                                             <styleClass>
-                                                                <String fx:value="radio-danger"/>
-                                                                <String fx:value="radio-drawer"/>
+                                                                <String fx:value="radio-danger" />
+                                                                <String fx:value="radio-drawer" />
                                                             </styleClass>
                                                             <toggleGroup>
-                                                                <ToggleGroup fx:id="level"/>
+                                                                <ToggleGroup fx:id="level" />
                                                             </toggleGroup>
                                                         </RadioButton>
-                                                        <RadioButton mnemonicParsing="false" text="Diploma"
-                                                                     toggleGroup="$level">
+                                                        <RadioButton mnemonicParsing="false" text="Diploma" toggleGroup="$level">
                                                             <styleClass>
-                                                                <String fx:value="radio-warning"/>
-                                                                <String fx:value="radio-drawer"/>
+                                                                <String fx:value="radio-warning" />
+                                                                <String fx:value="radio-drawer" />
                                                             </styleClass>
                                                             <HBox.margin>
-                                                                <Insets left="60.0"/>
+                                                                <Insets left="60.0" />
                                                             </HBox.margin>
                                                         </RadioButton>
                                                     </children>
                                                 </HBox>
-                                                <JFXTextField focusColor="#296aa6" labelFloat="true" layoutX="10.0"
-                                                              layoutY="10.0" promptText="Registration Year"
-                                                              unFocusColor="#979696">
-                                                    <VBox.margin>
-                                                        <Insets top="20.0"/>
-                                                    </VBox.margin>
-                                                </JFXTextField>
-                                                <JFXComboBox focusColor="#4072a8" labelFloat="true" layoutX="10.0"
-                                                             layoutY="20.0" prefHeight="31.0" prefWidth="317.0"
-                                                             promptText="Course Type" unFocusColor="#979696">
-                                                    <VBox.margin>
-                                                        <Insets top="20.0"/>
-                                                    </VBox.margin>
-                                                </JFXComboBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="219.0">
+                                       <children>
+                                          <JFXComboBox focusColor="#4072a8" labelFloat="true" prefHeight="31.0" prefWidth="247.0" promptText="Batch Number" unFocusColor="#979696" />
+                                          <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" prefHeight="30.0" prefWidth="30.0" ripplerFill="#f2dbd6" styleClass="roundButton">
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <padding>
+                                                <Insets left="1.0" top="2.0" />
+                                             </padding>
+                                             <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="15" />
+                                             </graphic>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </JFXButton>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                    </HBox>
                                                 <VBox alignment="CENTER" prefHeight="132.0" prefWidth="303.0">
                                                     <VBox.margin>
-                                                        <Insets top="16.0"/>
+                                                        <Insets top="25.0" />
                                                     </VBox.margin>
                                                     <styleClass>
-                                                        <String fx:value="card-unpadded"/>
-                                                        <String fx:value="aaaaaa"/>
+                                                        <String fx:value="card-unpadded" />
+                                                        <String fx:value="aaaaaa" />
                                                     </styleClass>
                                                     <children>
                                                         <Label text="Registration Number" textFill="WHITE">
                                                             <font>
-                                                                <Font size="13.0"/>
+                                                                <Font size="13.0" />
                                                             </font>
                                                             <VBox.margin>
-                                                                <Insets top="10.0"/>
+                                                                <Insets top="10.0" />
                                                             </VBox.margin>
                                                         </Label>
                                                         <HBox alignment="CENTER" prefHeight="52.0" prefWidth="303.0">
                                                             <children>
                                                                 <Label text="ANU/HNDIT/2018/P/" textFill="WHITE">
                                                                     <font>
-                                                                        <Font size="18.0"/>
+                                                                        <Font size="18.0" />
                                                                     </font>
                                                                 </Label>
                                                                 <TextField prefHeight="28.0" prefWidth="73.0">
                                                                     <HBox.margin>
-                                                                        <Insets left="5.0"/>
+                                                                        <Insets left="5.0" />
                                                                     </HBox.margin>
                                                                     <font>
-                                                                        <Font name="System Bold" size="17.0"/>
+                                                                        <Font name="System Bold" size="17.0" />
                                                                     </font>
                                                                 </TextField>
                                                             </children>
@@ -226,67 +223,91 @@
                                 </AnchorPane>
                             </content>
                             <styleClass>
-                                <String fx:value="card-unpadded"/>
-                                <String fx:value="blue-titledPane"/>
+                                <String fx:value="card-unpadded" />
+                                <String fx:value="blue-titledPane" />
                             </styleClass>
                             <font>
-                                <Font size="21.0"/>
+                                <Font size="21.0" />
                             </font>
                         </TitledPane>
-                        <VBox layoutX="746.0" layoutY="269.0" prefHeight="237.0" prefWidth="323.0"
-                              styleClass="card-unpadded">
+                        <VBox layoutX="746.0" layoutY="269.0" prefHeight="237.0" prefWidth="323.0" styleClass="card-unpadded">
                             <children>
-                                <AnchorPane prefHeight="121.0" prefWidth="350.0" style="-fx-background-color: #197abb;"
-                                            styleClass="card-title">
+                                <AnchorPane prefHeight="121.0" prefWidth="350.0" style="-fx-background-color: #197abb;" styleClass="card-title">
                                     <children>
-                                        <JFXProgressBar layoutX="42.0" layoutY="31.0" prefHeight="20.0"
-                                                        prefWidth="267.0" progress="0.67">
+                                        <JFXProgressBar layoutX="42.0" layoutY="31.0" prefHeight="20.0" prefWidth="267.0" progress="0.67">
                                             <effect>
-                                                <ColorAdjust brightness="0.57" contrast="0.5" hue="-0.67"
-                                                             saturation="0.1"/>
+                                                <ColorAdjust brightness="0.57" contrast="0.5" hue="-0.67" saturation="0.1" />
                                             </effect>
                                         </JFXProgressBar>
                                         <Label layoutX="135.0" layoutY="63.0" text="20% complete" textFill="WHITE">
                                             <font>
-                                                <Font name="System Bold" size="12.0"/>
+                                                <Font name="System Bold" size="12.0" />
                                             </font>
                                         </Label>
                                     </children>
                                 </AnchorPane>
                                 <HBox alignment="CENTER" prefHeight="120.0" prefWidth="323.0">
                                     <children>
-                                        <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="106.0"
-                                                   style="-fx-background-color: #1b88bf;" text="Clear" textFill="WHITE">
+                                        <JFXButton graphicTextGap="8.0" prefHeight="40.0" prefWidth="106.0" style="-fx-background-color: #1b88bf;" text="Clear" textFill="WHITE">
                                             <font>
-                                                <Font size="14.0"/>
+                                                <Font size="14.0" />
                                             </font>
                                             <graphic>
-                                                <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="13"/>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="13" />
                                             </graphic>
                                         </JFXButton>
-                                        <JFXButton layoutX="132.0" layoutY="42.0" prefHeight="40.0" prefWidth="106.0"
-                                                   styleClass="saveButton" text="Save" textFill="WHITE">
+                                        <JFXButton layoutX="132.0" layoutY="42.0" prefHeight="40.0" prefWidth="106.0" styleClass="saveButton" text="Save" textFill="WHITE">
                                             <font>
-                                                <Font size="14.0"/>
+                                                <Font size="14.0" />
                                             </font>
                                             <HBox.margin>
-                                                <Insets left="10.0"/>
+                                                <Insets left="10.0" />
                                             </HBox.margin>
                                             <graphic>
-                                                <FontAwesomeIconView fill="WHITE" glyphName="CHECK"/>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="CHECK" />
                                             </graphic>
                                         </JFXButton>
                                     </children>
                                 </HBox>
                             </children>
                         </VBox>
+                  <TitledPane animated="false" collapsible="false" contentDisplay="CENTER" layoutX="746.0" layoutY="25.0" prefHeight="233.0" prefWidth="323.0" text="Contact Details">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="461.0" prefWidth="333.0">
+                           <children>
+                              <VBox layoutX="4.0" layoutY="4.0" prefHeight="183.0" prefWidth="313.0">
+                                 <children>
+                                    <JFXTextField focusColor="#296aa6" labelFloat="true" promptText="Contact Number" unFocusColor="#979696" />
+                                    <JFXTextField focusColor="#296aa6" labelFloat="true" layoutX="10.0" layoutY="10.0" promptText="Email Address" unFocusColor="#979696">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </JFXTextField>
+                                    <JFXTextArea labelFloat="true" prefHeight="77.0" prefWidth="313.0" promptText="Address" unFocusColor="#979696">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </JFXTextArea>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <styleClass>
+                        <String fx:value="card-unpadded" />
+                        <String fx:value="blue-titledPane" />
+                     </styleClass>
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </TitledPane>
                     </children>
                 </AnchorPane>
             </center>
         </BorderPane>
     </children>
     <stylesheets>
-        <URL value="@../Assets/CSS/Style.css"/>
-        <URL value="@../Assets/CSS/customRadioButton.css"/>
+        <URL value="@../Assets/CSS/Style.css" />
+        <URL value="@../Assets/CSS/customRadioButton.css" />
     </stylesheets>
 </StackPane>
