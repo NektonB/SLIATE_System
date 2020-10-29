@@ -117,36 +117,59 @@ public class DataWriter {
         return operation;
     }
 
-    public String SaveDepartment() {
+    public String suDepartment() {
         int done = 0;
         String operation = "";
         try {
             if (user.getId() == 0) {
-                pst = conn.prepareStatement("INSERT INTO user(full_name,nic_number, contact_number,email, user_name, password, ut_id, ads_id) VALUES(?,?,?,?,?,?,?,?) ");
+                cst = conn.prepareCall("CALL saveDepartment(?,?)");
                 operation = "Save";
             } else {
-                pst = conn.prepareStatement("UPDATE user SET full_name = ?, nic_number = ?, contact_number = ?,email = ?, user_name = ?, password = ?, ut_id = ?, ads_id = ? WHERE id = ?");
-                pst.setInt(9, user.getId());
+                cst = conn.prepareCall("CALL updateDepartment(?,?,?)");
+                cst.setInt(3, department.getId());
                 operation = "Update";
             }
 
-            pst.setString(1, user.getFullName());
-            pst.setString(2, user.getNic());
-            pst.setString(3, user.getContactNumber());
-            pst.setString(4, user.getEmail());
-            pst.setString(5, user.getUserName());
-            pst.setString(6, user.getPassword());
-            pst.setInt(7, userType.getId());
-            pst.setInt(8, ad_status.getId());
+            cst.setString(1, department.getName());
+            cst.setInt(2, 1);
 
-            done = pst.executeUpdate();
+            done = cst.executeUpdate();
 
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
-                if (!pst.isClosed()) {
-                    pst.close();
+                if (cst == null & !cst.isClosed()) {
+                    cst.close();
+                }
+                if (done <= 0) {
+                    operation = "failed";
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return operation;
+    }
+
+    public String deleteDepartment() {
+        int done = 0;
+        String operation = "";
+        try {
+            if (user.getId() > 0) {
+                cst = conn.prepareCall("CALL deleteDepartment(?)");
+                cst.setInt(1, department.getId());
+                done = cst.executeUpdate();
+
+                operation = "Delete";
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (cst != null & !cst.isClosed()) {
+                    cst.close();
                 }
                 if (done <= 0) {
                     operation = "failed";
