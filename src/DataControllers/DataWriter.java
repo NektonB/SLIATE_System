@@ -5,11 +5,13 @@ import Controllers.ObjectGenerator;
 import DB_Conn.ConnectDB;
 import Modules.*;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 public class DataWriter {
     PreparedStatement pst;
+    CallableStatement cst;
     Connection conn;
 
     Alerts alerts;
@@ -19,7 +21,7 @@ public class DataWriter {
     User user;
     UserType userType;
     AD_Status ad_status;
-
+    Department department;
 
     /**
      * Load Supporting classes by thread
@@ -35,6 +37,7 @@ public class DataWriter {
                 user = ObjectGenerator.getUser();
                 userType = ObjectGenerator.getUserType();
                 ad_status = ObjectGenerator.getAd_status();
+                department = ObjectGenerator.getDepartment();
             });
             readyData.setName("Data Writer");
             readyData.start();
@@ -44,7 +47,77 @@ public class DataWriter {
         }
     }
 
-    public String SU_User() {
+    public String suUser() {
+        int done = 0;
+        String operation = "";
+        try {
+            if (user.getId() == 0) {
+                cst = conn.prepareCall("CALL saveUser(?,?,?,?,?,?,?,?)");
+                operation = "Save";
+            } else {
+                cst = conn.prepareCall("CALL updateUser(?,?,?,?,?,?,?,?,?)");
+                cst.setInt(9, user.getId());
+                operation = "Update";
+            }
+
+            cst.setString(1, user.getFullName());
+            cst.setString(2, user.getNic());
+            cst.setString(3, user.getContactNumber());
+            cst.setString(4, user.getEmail());
+            cst.setString(5, user.getUserName());
+            cst.setString(6, user.getPassword());
+            cst.setInt(7, userType.getId());
+            cst.setInt(8, ad_status.getId());
+
+            done = cst.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (cst != null & !cst.isClosed()) {
+                    cst.close();
+                }
+                if (done <= 0) {
+                    operation = "failed";
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return operation;
+    }
+
+    public String deleteUser() {
+        int done = 0;
+        String operation = "";
+        try {
+            if (user.getId() > 0) {
+                cst = conn.prepareCall("CALL deleteUser(?)");
+                cst.setInt(1, user.getId());
+                done = cst.executeUpdate();
+
+                operation = "Delete";
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (cst != null & !cst.isClosed()) {
+                    cst.close();
+                }
+                if (done <= 0) {
+                    operation = "failed";
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return operation;
+    }
+
+    public String SaveDepartment() {
         int done = 0;
         String operation = "";
         try {

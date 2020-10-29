@@ -15,6 +15,7 @@ public class ObjectGenerator {
     private static User user;
     private static UserType userType;
     private static AD_Status ad_status;
+    private static Department department;
 
     public static synchronized void readyAll() {
         try {
@@ -86,10 +87,17 @@ public class ObjectGenerator {
         return userType;
     }
 
-    public static AD_Status getAd_status() {
+    public static synchronized AD_Status getAd_status() {
         if (ad_status == null) {
             ad_status = new AD_Status();
         }
         return ad_status;
+    }
+
+    public static synchronized Department getDepartment() {
+        if (department == null) {
+            department = new Department();
+        }
+        return department;
     }
 }

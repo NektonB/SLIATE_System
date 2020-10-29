@@ -154,7 +154,7 @@ public class UserController implements Initializable {
                 dataReader.getUT_DetailsByType(cmbUserType.getValue());
                 dataReader.getADS_DetailsByStatus(cmbStatus.getValue());
 
-                String operation = dataWriter.SU_User();
+                String operation = dataWriter.suUser();
                 if (operation.equals("Save")) {
                     resetAll();
                     alerts.getSuccessNotify("User Registration", "Congratulation Chief..!\nUser registration successful");
@@ -162,7 +162,7 @@ public class UserController implements Initializable {
                     resetAll();
                     alerts.getSuccessNotify("User Update", "Congratulation Chief..!\nUser update successful");
                 } else if (operation.equals("failed")) {
-                    alerts.getSuccessNotify("Error", "Sorry Chief..!\nOperation unsuccessful");
+                    alerts.getErrorNotify("Error", "Sorry Chief..!\nOperation unsuccessful");
                 }
             }
         } catch (Exception e) {
@@ -173,6 +173,37 @@ public class UserController implements Initializable {
     public void saveUser_key(KeyEvent event) {
         if (event.isControlDown() && event.getCode().equals(KeyCode.S)) {
             saveUser();
+        }
+    }
+
+    public void deleteUser() {
+        try {
+            if (validateFiled()) {
+
+                String operation = dataWriter.deleteUser();
+                if (operation.equals("Delete")) {
+                    resetAll();
+                    alerts.getSuccessNotify("User Delete", "Congratulation Chief..!\nUser delete successful");
+                } else if (operation.equals("failed")) {
+                    alerts.getErrorNotify("Error", "Sorry Chief..!\nOperation unsuccessful");
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteUser_key(KeyEvent event) {
+        if (event.getCode().equals(KeyCode.DELETE)) {
+            deleteUser();
+        }
+    }
+
+    public void setAnchorPaneKeyType(KeyEvent event) {
+        if (event.isControlDown() && event.getCode().equals(KeyCode.S)) {
+            saveUser();
+        } else if (event.getCode().equals(KeyCode.DELETE)) {
+            deleteUser();
         }
     }
 
