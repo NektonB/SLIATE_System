@@ -6,6 +6,8 @@ import Modules.AD_Status;
 import Modules.User;
 import Modules.UserType;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -21,6 +23,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ViewUserController implements Initializable {
@@ -33,10 +37,7 @@ public class ViewUserController implements Initializable {
     User user;
     UserType userType;
     AD_Status ad_status;
-
-    private void loadData() {
-
-    }
+    Map<String, Object> components = new HashMap<>();
 
     @FXML
     private AnchorPane contentPane;
@@ -81,8 +82,12 @@ public class ViewUserController implements Initializable {
         }
     }
 
-    public void setLoadDataFunction(Void loadData) {
-        //this.loadData = loadData;
+    public void loadComponents(Map<String, Object> components) {
+        try {
+            this.components = components;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void selectUser() {
@@ -90,6 +95,8 @@ public class ViewUserController implements Initializable {
             if (!tblUser.getItems().isEmpty()) {
                 UserRow userRow = tblUser.getSelectionModel().getSelectedItem();
                 dataReader.getUserDetailsById(userRow.getId());
+                loadData();
+                closeMe();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -99,6 +106,23 @@ public class ViewUserController implements Initializable {
     public void selectUser_Key(KeyEvent event) {
         if (event.getCode().equals(KeyCode.ENTER)) {
             selectUser();
+        }
+    }
+
+    private void loadData() {
+        try {
+            ((JFXTextField) components.get("txtFullName")).setText(user.getFullName());
+            ((JFXTextField) components.get("txtNIC")).setText(user.getNic());
+            ((JFXTextField) components.get("txtContactNumber")).setText(user.getContactNumber());
+            ((JFXTextField) components.get("txtEmail")).setText(user.getEmail());
+            ((JFXTextField) components.get("txtUserName")).setText(user.getEmail());
+            ((JFXPasswordField) components.get("txtPassword")).setText(user.getPassword());
+
+            ((JFXComboBox<String>) components.get("cmbUserType")).setValue(userType.getType());
+
+            ((JFXComboBox<String>) components.get("cmbStatus")).setValue(ad_status.getStatus());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

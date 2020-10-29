@@ -22,6 +22,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class UserController implements Initializable {
@@ -34,6 +36,7 @@ public class UserController implements Initializable {
     User user;
     UserType userType;
     AD_Status ad_status;
+    Map<String, Object> components = new HashMap<>();
     @FXML
     private JFXButton btnViewUser;
     @FXML
@@ -202,7 +205,17 @@ public class UserController implements Initializable {
             productsStage.initModality(Modality.APPLICATION_MODAL);
 
             ViewUserController controller = loader.getController();
-            //controller.setLoadDataFunction(resetAll());
+
+            components.put("txtFullName", txtFullName);
+            components.put("txtNIC", txtNIC);
+            components.put("txtContactNumber", txtContactNumber);
+            components.put("txtEmail", txtEmail);
+            components.put("txtUserName", txtUserName);
+            components.put("cmbUserType", cmbUserType);
+            components.put("txtPassword", txtPassword);
+            components.put("cmbStatus", cmbStatus);
+
+            controller.loadComponents(components);
 
             productsStage.show();
 
