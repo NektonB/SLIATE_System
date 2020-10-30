@@ -55,8 +55,7 @@ public class DataWriter {
                 cst = conn.prepareCall("CALL saveUser(?,?,?,?,?,?,?,?)");
                 operation = "Save";
             } else {
-                cst = conn.prepareCall("CALL updateUser(?,?,?,?,?,?,?,?,?)");
-                cst.setInt(9, user.getId());
+                cst = conn.prepareCall("CALL saveUser(?,?,?,?,?,?,?,?)");
                 operation = "Update";
             }
 
@@ -121,17 +120,16 @@ public class DataWriter {
         int done = 0;
         String operation = "";
         try {
-            if (user.getId() == 0) {
+            if (department.getId() == 0) {
                 cst = conn.prepareCall("CALL saveDepartment(?,?)");
                 operation = "Save";
             } else {
-                cst = conn.prepareCall("CALL updateDepartment(?,?,?)");
-                cst.setInt(3, department.getId());
+                cst = conn.prepareCall("CALL saveDepartment(?,?)");
                 operation = "Update";
             }
 
             cst.setString(1, department.getName());
-            cst.setInt(2, 1);
+            cst.setInt(2, ad_status.getId());
 
             done = cst.executeUpdate();
 
@@ -152,18 +150,14 @@ public class DataWriter {
         return operation;
     }
 
-    public String deleteDepartment() {
+    public String deleteDepartment(String name) {
         int done = 0;
         String operation = "";
         try {
-            if (user.getId() > 0) {
-                cst = conn.prepareCall("CALL deleteDepartment(?)");
-                cst.setInt(1, department.getId());
-                done = cst.executeUpdate();
-
-                operation = "Delete";
-            }
-
+            cst = conn.prepareCall("CALL deleteDepartment(?)");
+            cst.setString(1, name);
+            done = cst.executeUpdate();
+            operation = "Delete";
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

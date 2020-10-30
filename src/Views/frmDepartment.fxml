@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="203.0" prefWidth="348.0"
+            minWidth="-Infinity" onKeyReleased="#setAnchorPaneKeyEvent" prefHeight="203.0" prefWidth="348.0"
             style="-fx-background-color: white; -fx-background-radius: 10px; -fx-border-radius: 10px;"
             stylesheets="@../Assets/CSS/Style.css" xmlns="http://javafx.com/javafx/8.0.171"
             fx:controller="Controllers.DepartmentController">
@@ -22,13 +22,13 @@
                 <Font size="13.0"/>
             </font>
         </JFXTextField>
-        <JFXButton fx:id="btnAdd" layoutX="128.0" layoutY="141.0" prefHeight="37.0" prefWidth="77.0"
-                   styleClass="saveButton" text="Add" textFill="WHITE">
+        <JFXButton fx:id="btnAdd" layoutX="128.0" layoutY="141.0" onAction="#saveDepartment" prefHeight="37.0"
+                   prefWidth="77.0" styleClass="saveButton" text="Add" textFill="WHITE">
             <font>
                 <Font size="13.0"/>
             </font>
         </JFXButton>
-        <JFXButton fx:id="btnDismiss" layoutX="216.0" layoutY="141.0" onAction="#closeScene" prefHeight="37.0"
+        <JFXButton fx:id="btnDismiss" layoutX="216.0" layoutY="141.0" onAction="#closeMe" prefHeight="37.0"
                    prefWidth="95.0" styleClass="saveButton" text="Dismiss" textFill="WHITE">
             <font>
                 <Font size="13.0"/>
